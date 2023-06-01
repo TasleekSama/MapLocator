@@ -1,0 +1,104 @@
+.widgets-container {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    top: 0;
+    padding: 2px;
+    margin: 5px;
+    /* width: 30%; */
+    right: 0;
+    /* background: red; */
+}
+
+.widget-container {
+    display: flex;
+    flex-flow: column;
+    background: #fff;
+    /* padding: 1px; */
+    margin: 2px 0 2px 0;
+    /* border: 2px solid black; */
+    text-align: right;
+}
+
+.widget-header {
+    /* border: 1px solid red; */
+    display: flex;
+    direction: rtl;
+    background: #fff;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.widget-header-title {
+    padding: 0 5px;
+    flex: 1;
+    color: lightgrey;
+    font-size: 13px;
+    font-family: 'Kufi';
+}
+
+.widget-header-icon {
+    padding: 0 5px;
+    color: lightgrey;
+}
+
+.widget-body {
+    /* border: 1px solid green;
+    padding: 1px; */
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: column;
+    direction: rtl;
+    background: #fff;
+}
+
+.widget-footer {
+    border: 1px solid orange;
+}
+
+.widget-home-title {
+    flex: 1;
+    margin: 0 40px;
+    font-size: 15px;
+    font-family: 'Kufi';
+}
+
+.widget-home-logo {
+    width: 53px;
+    margin: 0 5px;
+}
+
+.shadow {
+    box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 30%);
+}
+
+.cPointer {
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    color: red;
+}
+
+.list-body {
+    position: absolute;
+    width: 99%;
+    background: #fff;
+}
+
+
+label{
+    font-family: 'Kufi';
+    font-size: 13px;
+    color: lightgrey;
+}
+
+i.spinner-border{
+    font-size: 11px;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+.input-group {
+    padding: 0 5px 5px;
+}

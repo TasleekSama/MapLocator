@@ -1,0 +1,64 @@
+﻿{
+  "services": {
+    "vectorBasemap": {
+      "url": "https://bkhet.momra.gov.sa/server/rest/services/Hosted/MOMRA_Basemap_36M/VectorTileServer",
+      "title": "طبقة الأساس"
+    },
+    "vectorBasemap1": {
+      "url": "https://portal.momra.gov.sa/hosted/rest/services/Hosted/BaseMap_FinalCart_Projected/VectorTileServer",
+      "title": "طبقة الأساس"
+    },
+    "amanaLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/30",
+      "title": "الأمانات"
+    },
+    "regionLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/Bundaries/AdminBoundary/MapServer/3",
+      "title": "المحافظة"
+    },
+    "CityLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/Bundaries/Cities/MapServer/0",
+      "title": "المدينة"
+    },
+    "baladiaLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/31",
+      "title": "البلديات"
+    },
+    "districtsLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/32",
+      "title": "الأحياء"
+    },
+    "planLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/34",
+      "title": "المخططات"
+    },
+    "parcelLayerUrl": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/35",
+      "title": "الأراضي"
+    },
+    "streetLayerUrl": {
+      "url": "https://app1.momra.gov.sa/arcgis/rest/services/NonBalady/Fawry/MapServer/0",
+      "title": "الشوارع"
+    },
+    "Netaq": {
+      "url": "https://Nitaq.momra.gov.sa/arcgis/rest/services/Netaq/Netaq_Test/MapServer/0",
+      "title": "النطاق العمراني "
+    },
+    "Hazer": {
+      "url": "https://gis65.momra.gov.sa/arcgis/rest/services/non_balady/REDZONE/MapServer/0",
+      "title": "الحظر"
+    },
+    "proxyUrl": {
+      "url": "/GeneralProxy/proxy.ashx",
+      "title": "proxy"
+    },
+    "getImageUrl": {
+      "url": "/GISServices/RestfulService.svc/ImageURL",
+      "title": "getImageUrl"
+    },
+    "BasemapLayer": {
+      "url": "https://portal.momra.gov.sa/server/rest/services/BaseMap/BasicMap/MapServer",
+      "title": "all layers"
+    }
+  }
+}

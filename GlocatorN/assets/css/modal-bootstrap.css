@@ -1,0 +1,13 @@
+.modal{
+    font-family: 'Kufi';
+}
+.modal-dialog {
+    direction: rtl;
+}
+
+.modal-title {
+    flex: 1;
+    font-family: 'Kufi';
+    font-size: 15px;
+    font-weight: bold;
+}

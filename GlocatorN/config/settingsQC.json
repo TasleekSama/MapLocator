@@ -1,0 +1,36 @@
+﻿{
+  "services": {
+    "amanaLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/30",
+      "title": "الأمانات"
+    },
+    "regionLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/Bundaries/AdminBoundary/MapServer/3",
+      "title": "المحافظة"
+    },
+    "CityLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/Bundaries/Cities/MapServer/0",
+      "title": "المدينة"
+    },
+    "baladiaLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/31",
+      "title": "البلديات"
+    },
+    "districtsLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/32",
+      "title": "الأحياء"
+    },
+    "planLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/34",
+      "title": "المخططات"
+    },
+    "parcelLayerUrl": {
+      "url": "https://webgis.momra.gov.sa/server/rest/services/BaseMap/MomraBasemap/MapServer/35",
+      "title": "الأراضي"
+    },
+    "streetLayerUrl": {
+      "url": "https://gisapp1.momra.gov.sa/arcgis/rest/services/NonBalady/Fawry/MapServer/0",
+      "title": "الشوارع"
+    }
+  }
+}

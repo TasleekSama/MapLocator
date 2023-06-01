@@ -1,0 +1,24 @@
+/* to remove the black border from map when user click on it */
+.esri-view .esri-view-surface--inset-outline:focus::after{
+    outline: 0; 
+    outline: 0px; 
+    outline-offset: 0;
+  }
+
+  .esri-widget--button {
+    font-size: 14px;
+    background-color: #fff;
+    color: #6e6e6e;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 125ms ease-in-out;
+}

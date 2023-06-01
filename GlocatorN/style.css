@@ -1,0 +1,94 @@
+@import "https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css";
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css";
+@import "https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css";
+@import "./assets/css/base-theme-structure.css";
+@import "./assets/css/input-search.css";
+@import "./assets/css/select2.css";
+@import "./assets/css/loading.css";
+@import "./assets/css/modal-bootstrap.css";
+
+@import "./assets/css/esri-custome-theme/esri-basemap.css";
+@import "./assets/css/esri-custome-theme/map.css";
+
+@font-face {
+    font-family: "kufi";
+    src: url("./assets/fonts/DroidKufi/DroidKufi-Regular.ttf") format("truetype");
+}
+
+
+
+.widget-container.cascading-dropdown > .widget-body{
+    display: none;
+}
+
+.widget-container.cascading-dropdown > .widget-footer {
+    display: none;
+}
+
+.widget-container.cascading-dropdown > .widget-body.open{
+    display: flex;
+}
+
+.widget-container.cascading-dropdown > .widget-footer.open {
+    display: flex;
+    direction:rtl;
+}
+
+.widget-container.cascading-dropdown .widget-header > .widget-header-icon.open{
+    transform: rotate(180deg);
+}
+
+.copy-right {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    font-family: 'Kufi';
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255 255 255 / 0.6);
+    z-index: 1;
+    top: 0;
+}
+.list-body {
+   
+    padding: 0 6px 8px;
+}
+@media only screen and (max-width: 600px) {
+    .widgets-container{
+        width: 85%;
+        top: 1%;
+    }
+
+    .copy-right {
+        bottom: 0;
+        /* display: none; */
+    }
+
+    .copy-right p {
+        margin-bottom: 3px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .widgets-container{
+        width: 80%;
+        top: 1%;
+    }
+
+    .copy-right {
+        bottom: 0;
+        /* display: none; */
+    }
+
+    .copy-right p {
+        margin-bottom: 3px;
+    }
+}

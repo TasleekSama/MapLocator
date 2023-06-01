@@ -1,0 +1,585 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97E55B0A-720B-4B46-9D92-3063038ED9A6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlocatorN</RootNamespace>
+    <AssemblyName>GlocatorN</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\GisServicesAPI\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app-theme.js" />
+    <Content Include="assets\css\base-theme-structure.css" />
+    <Content Include="assets\css\esri-custome-theme\esri-basemap.css" />
+    <Content Include="assets\css\esri-custome-theme\map.css" />
+    <Content Include="assets\css\input-search.css" />
+    <Content Include="assets\css\loading.css" />
+    <Content Include="assets\css\modal-bootstrap.css" />
+    <Content Include="assets\css\select2.css" />
+    <Content Include="assets\images\logo.svg" />
+    <Content Include="assets\images\map\hybrid.png" />
+    <Content Include="assets\images\map\satellite.png" />
+    <Content Include="assets\images\map\vectorTile.png" />
+    <Content Include="chunks\1050.js" />
+    <Content Include="chunks\1090.js" />
+    <Content Include="chunks\1123.js" />
+    <Content Include="chunks\1146.js" />
+    <Content Include="chunks\1180.js" />
+    <Content Include="chunks\123.js" />
+    <Content Include="chunks\124.js" />
+    <Content Include="chunks\1255.js" />
+    <Content Include="chunks\1280.js" />
+    <Content Include="chunks\1308.js" />
+    <Content Include="chunks\1329.js" />
+    <Content Include="chunks\134.js" />
+    <Content Include="chunks\1352.js" />
+    <Content Include="chunks\1373.js" />
+    <Content Include="chunks\1373.js.LICENSE.txt" />
+    <Content Include="chunks\1489.js" />
+    <Content Include="chunks\1500.js" />
+    <Content Include="chunks\1571.js" />
+    <Content Include="chunks\1605.js" />
+    <Content Include="chunks\1655.js" />
+    <Content Include="chunks\1657.js" />
+    <Content Include="chunks\1673.js" />
+    <Content Include="chunks\1681.js" />
+    <Content Include="chunks\1691.js" />
+    <Content Include="chunks\17.js" />
+    <Content Include="chunks\1780.js" />
+    <Content Include="chunks\1810.js" />
+    <Content Include="chunks\1936.js" />
+    <Content Include="chunks\1968.js" />
+    <Content Include="chunks\2030.js" />
+    <Content Include="chunks\2052.js" />
+    <Content Include="chunks\2103.js" />
+    <Content Include="chunks\2209.js" />
+    <Content Include="chunks\2247.js" />
+    <Content Include="chunks\2329.js" />
+    <Content Include="chunks\2380.js" />
+    <Content Include="chunks\2394.js" />
+    <Content Include="chunks\2479.js" />
+    <Content Include="chunks\2552.js" />
+    <Content Include="chunks\2601.js" />
+    <Content Include="chunks\2642.js" />
+    <Content Include="chunks\2670.js" />
+    <Content Include="chunks\269.js" />
+    <Content Include="chunks\2705.js" />
+    <Content Include="chunks\2738.js" />
+    <Content Include="chunks\2849.js" />
+    <Content Include="chunks\2901.js" />
+    <Content Include="chunks\2902.js" />
+    <Content Include="chunks\2953.js" />
+    <Content Include="chunks\2968.js" />
+    <Content Include="chunks\2968.js.LICENSE.txt" />
+    <Content Include="chunks\3003.js" />
+    <Content Include="chunks\3031.js" />
+    <Content Include="chunks\3040.js" />
+    <Content Include="chunks\3108.js" />
+    <Content Include="chunks\3206.js" />
+    <Content Include="chunks\3259.js" />
+    <Content Include="chunks\3261.js" />
+    <Content Include="chunks\3362.js" />
+    <Content Include="chunks\3399.js" />
+    <Content Include="chunks\3433.js" />
+    <Content Include="chunks\3549.js" />
+    <Content Include="chunks\3561.js" />
+    <Content Include="chunks\3625.js" />
+    <Content Include="chunks\365.js" />
+    <Content Include="chunks\3667.js" />
+    <Content Include="chunks\3714.js" />
+    <Content Include="chunks\3814.js" />
+    <Content Include="chunks\3912.js" />
+    <Content Include="chunks\3925.js" />
+    <Content Include="chunks\3942.js" />
+    <Content Include="chunks\3963.js" />
+    <Content Include="chunks\397.js" />
+    <Content Include="chunks\4000.js" />
+    <Content Include="chunks\4049.js" />
+    <Content Include="chunks\4078.js" />
+    <Content Include="chunks\412.js" />
+    <Content Include="chunks\4283.js" />
+    <Content Include="chunks\4287.js" />
+    <Content Include="chunks\4366.js" />
+    <Content Include="chunks\4372.js" />
+    <Content Include="chunks\4417.js" />
+    <Content Include="chunks\4420.js" />
+    <Content Include="chunks\4473.js" />
+    <Content Include="chunks\4568.js" />
+    <Content Include="chunks\4587.js" />
+    <Content Include="chunks\4669.js" />
+    <Content Include="chunks\4685.js" />
+    <Content Include="chunks\4698.js" />
+    <Content Include="chunks\4783.js" />
+    <Content Include="chunks\4788.js" />
+    <Content Include="chunks\4821.js" />
+    <Content Include="chunks\485.js" />
+    <Content Include="chunks\4864.js" />
+    <Content Include="chunks\5007.js" />
+    <Content Include="chunks\5009.js" />
+    <Content Include="chunks\5019.js" />
+    <Content Include="chunks\5045.js" />
+    <Content Include="chunks\5048.js" />
+    <Content Include="chunks\5134.js" />
+    <Content Include="chunks\5149.js" />
+    <Content Include="chunks\5215.js" />
+    <Content Include="chunks\5266.js" />
+    <Content Include="chunks\5312.js" />
+    <Content Include="chunks\5345.js" />
+    <Content Include="chunks\5369.js" />
+    <Content Include="chunks\5423.js" />
+    <Content Include="chunks\5515.js" />
+    <Content Include="chunks\5532.js" />
+    <Content Include="chunks\5583.js" />
+    <Content Include="chunks\5609.js" />
+    <Content Include="chunks\5670.js" />
+    <Content Include="chunks\5698.js" />
+    <Content Include="chunks\576.js" />
+    <Content Include="chunks\576.js.LICENSE.txt" />
+    <Content Include="chunks\5809.js" />
+    <Content Include="chunks\5826.js" />
+    <Content Include="chunks\5831.js" />
+    <Content Include="chunks\5859.js" />
+    <Content Include="chunks\5875.js" />
+    <Content Include="chunks\6086.js" />
+    <Content Include="chunks\6185.js" />
+    <Content Include="chunks\6224.js" />
+    <Content Include="chunks\6248.js" />
+    <Content Include="chunks\6290.js" />
+    <Content Include="chunks\6330.js" />
+    <Content Include="chunks\6361.js" />
+    <Content Include="chunks\6441.js" />
+    <Content Include="chunks\6479.js" />
+    <Content Include="chunks\656.js" />
+    <Content Include="chunks\6615.js" />
+    <Content Include="chunks\6646.js" />
+    <Content Include="chunks\6685.js" />
+    <Content Include="chunks\6774.js" />
+    <Content Include="chunks\6782.js" />
+    <Content Include="chunks\6802.js" />
+    <Content Include="chunks\6807.js" />
+    <Content Include="chunks\6829.js" />
+    <Content Include="chunks\6846.js" />
+    <Content Include="chunks\6857.js" />
+    <Content Include="chunks\6871.js" />
+    <Content Include="chunks\6888.js" />
+    <Content Include="chunks\693.js" />
+    <Content Include="chunks\6985.js" />
+    <Content Include="chunks\7013.js" />
+    <Content Include="chunks\7062.js" />
+    <Content Include="chunks\7076.js" />
+    <Content Include="chunks\7204.js" />
+    <Content Include="chunks\7251.js" />
+    <Content Include="chunks\7303.js" />
+    <Content Include="chunks\734.js" />
+    <Content Include="chunks\7400.js" />
+    <Content Include="chunks\7578.js" />
+    <Content Include="chunks\7594.js" />
+    <Content Include="chunks\7653.js" />
+    <Content Include="chunks\7660.js" />
+    <Content Include="chunks\7808.js" />
+    <Content Include="chunks\786.js" />
+    <Content Include="chunks\791.js" />
+    <Content Include="chunks\7946.js" />
+    <Content Include="chunks\7978.js" />
+    <Content Include="chunks\7981.js" />
+    <Content Include="chunks\8060.js" />
+    <Content Include="chunks\81.js" />
+    <Content Include="chunks\8126.js" />
+    <Content Include="chunks\8136.js" />
+    <Content Include="chunks\8163.js" />
+    <Content Include="chunks\8185.js" />
+    <Content Include="chunks\8229.js" />
+    <Content Include="chunks\8243.js" />
+    <Content Include="chunks\8299.js" />
+    <Content Include="chunks\8385.js" />
+    <Content Include="chunks\8414.js" />
+    <Content Include="chunks\8506.js" />
+    <Content Include="chunks\8536.js" />
+    <Content Include="chunks\8611.js" />
+    <Content Include="chunks\8699.js" />
+    <Content Include="chunks\8718.js" />
+    <Content Include="chunks\8748.js" />
+    <Content Include="chunks\8754.js" />
+    <Content Include="chunks\886.js" />
+    <Content Include="chunks\890.js" />
+    <Content Include="chunks\8923.js" />
+    <Content Include="chunks\9110.js" />
+    <Content Include="chunks\9112.js" />
+    <Content Include="chunks\9180.js" />
+    <Content Include="chunks\922.js" />
+    <Content Include="chunks\9306.js" />
+    <Content Include="chunks\9323.js" />
+    <Content Include="chunks\9341.js" />
+    <Content Include="chunks\9421.js" />
+    <Content Include="chunks\9431.js" />
+    <Content Include="chunks\9435.js" />
+    <Content Include="chunks\9457.js" />
+    <Content Include="chunks\9547.js" />
+    <Content Include="chunks\9571.js" />
+    <Content Include="chunks\9597.js" />
+    <Content Include="chunks\9794.js" />
+    <Content Include="chunks\9821.js" />
+    <Content Include="chunks\9849.js" />
+    <Content Include="chunks\9859.js" />
+    <Content Include="chunks\9871.js" />
+    <Content Include="chunks\990.js" />
+    <Content Include="chunks\9918.js" />
+    <Content Include="chunks\994.js" />
+    <Content Include="chunks\9955.js" />
+    <Content Include="chunks\9979.js" />
+    <Content Include="CommLocatorN.aspx" />
+    <Content Include="Custom.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\images.png" />
+    <Content Include="images\pin_images.png" />
+    <Content Include="images\سكني.PNG" />
+    <Content Include="index.js" />
+    <Content Include="js\alertify.min.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\business.js" />
+    <Content Include="js\businessold.js" />
+    <Content Include="js\html2canvas.js" />
+    <Content Include="js\index.js" />
+    <Content Include="js\jquery-3.4.1.min.js" />
+    <Content Include="js\jquery-3.5.1.js" />
+    <Content Include="js\jquery.easy-autocomplete.js" />
+    <Content Include="js\jquery.easy-autocomplete.min.js" />
+    <Content Include="js\loadData.js" />
+    <Content Include="js\select2.min.js" />
+    <Content Include="style.css" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommLocatorN.aspx.cs">
+      <DependentUpon>CommLocatorN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommLocatorN.aspx.designer.cs">
+      <DependentUpon>CommLocatorN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\DroidKufi\DroidKufi-Regular.eot" />
+    <Content Include="assets\fonts\DroidKufi\DroidKufi-Regular.ttf" />
+    <Content Include="assets\fonts\DroidKufi\DroidKufi-Regular.woff" />
+    <Content Include="assets\fonts\DroidKufi\DroidKufi-Regular.woff2" />
+    <Content Include="chunks\1050.js.map" />
+    <Content Include="chunks\1123.js.map" />
+    <Content Include="chunks\123.js.map" />
+    <Content Include="chunks\124.js.map" />
+    <Content Include="chunks\1255.js.map" />
+    <Content Include="chunks\1280.js.map" />
+    <Content Include="chunks\1329.js.map" />
+    <Content Include="chunks\134.js.map" />
+    <Content Include="chunks\1352.js.map" />
+    <Content Include="chunks\1373.js.map" />
+    <Content Include="chunks\1489.js.map" />
+    <Content Include="chunks\1500.js.map" />
+    <Content Include="chunks\1571.js.map" />
+    <Content Include="chunks\1605.js.map" />
+    <Content Include="chunks\1655.js.map" />
+    <Content Include="chunks\1657.js.map" />
+    <Content Include="chunks\1673.js.map" />
+    <Content Include="chunks\1681.js.map" />
+    <Content Include="chunks\1691.js.map" />
+    <Content Include="chunks\17.js.map" />
+    <Content Include="chunks\1780.js.map" />
+    <Content Include="chunks\1810.js.map" />
+    <Content Include="chunks\1936.js.map" />
+    <Content Include="chunks\1968.js.map" />
+    <Content Include="chunks\2030.js.map" />
+    <Content Include="chunks\2052.js.map" />
+    <Content Include="chunks\2103.js.map" />
+    <Content Include="chunks\2209.js.map" />
+    <Content Include="chunks\2247.js.map" />
+    <Content Include="chunks\2329.js.map" />
+    <Content Include="chunks\2380.js.map" />
+    <Content Include="chunks\2394.js.map" />
+    <Content Include="chunks\2479.js.map" />
+    <Content Include="chunks\2552.js.map" />
+    <Content Include="chunks\2601.js.map" />
+    <Content Include="chunks\2642.js.map" />
+    <Content Include="chunks\2670.js.map" />
+    <Content Include="chunks\269.js.map" />
+    <Content Include="chunks\2705.js.map" />
+    <Content Include="chunks\2738.js.map" />
+    <Content Include="chunks\2849.js.map" />
+    <Content Include="chunks\2901.js.map" />
+    <Content Include="chunks\2902.js.map" />
+    <Content Include="chunks\2968.js.map" />
+    <Content Include="chunks\3031.js.map" />
+    <Content Include="chunks\3040.js.map" />
+    <Content Include="chunks\3108.js.map" />
+    <Content Include="chunks\3206.js.map" />
+    <Content Include="chunks\3259.js.map" />
+    <Content Include="chunks\3261.js.map" />
+    <Content Include="chunks\3362.js.map" />
+    <Content Include="chunks\3399.js.map" />
+    <Content Include="chunks\3433.js.map" />
+    <Content Include="chunks\3549.js.map" />
+    <Content Include="chunks\3561.js.map" />
+    <Content Include="chunks\3625.js.map" />
+    <Content Include="chunks\365.js.map" />
+    <Content Include="chunks\3667.js.map" />
+    <Content Include="chunks\3714.js.map" />
+    <Content Include="chunks\3814.js.map" />
+    <Content Include="chunks\3912.js.map" />
+    <Content Include="chunks\3925.js.map" />
+    <Content Include="chunks\3942.js.map" />
+    <Content Include="chunks\3963.js.map" />
+    <Content Include="chunks\397.js.map" />
+    <Content Include="chunks\4000.js.map" />
+    <Content Include="chunks\4049.js.map" />
+    <Content Include="chunks\412.js.map" />
+    <Content Include="chunks\4283.js.map" />
+    <Content Include="chunks\4287.js.map" />
+    <Content Include="chunks\4366.js.map" />
+    <Content Include="chunks\4372.js.map" />
+    <Content Include="chunks\4417.js.map" />
+    <Content Include="chunks\4420.js.map" />
+    <Content Include="chunks\4473.js.map" />
+    <Content Include="chunks\4568.js.map" />
+    <Content Include="chunks\4669.js.map" />
+    <Content Include="chunks\4685.js.map" />
+    <Content Include="chunks\4698.js.map" />
+    <Content Include="chunks\4783.js.map" />
+    <Content Include="chunks\4788.js.map" />
+    <Content Include="chunks\4821.js.map" />
+    <Content Include="chunks\485.js.map" />
+    <Content Include="chunks\4864.js.map" />
+    <Content Include="chunks\5007.js.map" />
+    <Content Include="chunks\5009.js.map" />
+    <Content Include="chunks\5019.js.map" />
+    <Content Include="chunks\5045.js.map" />
+    <Content Include="chunks\5048.js.map" />
+    <Content Include="chunks\5134.js.map" />
+    <Content Include="chunks\5149.js.map" />
+    <Content Include="chunks\5215.js.map" />
+    <Content Include="chunks\5266.js.map" />
+    <Content Include="chunks\5312.js.map" />
+    <Content Include="chunks\5345.js.map" />
+    <Content Include="chunks\5369.js.map" />
+    <Content Include="chunks\5423.js.map" />
+    <Content Include="chunks\5515.js.map" />
+    <Content Include="chunks\5532.js.map" />
+    <Content Include="chunks\5583.js.map" />
+    <Content Include="chunks\5609.js.map" />
+    <Content Include="chunks\5670.js.map" />
+    <Content Include="chunks\5698.js.map" />
+    <Content Include="chunks\576.js.map" />
+    <Content Include="chunks\5809.js.map" />
+    <Content Include="chunks\5826.js.map" />
+    <Content Include="chunks\5831.js.map" />
+    <Content Include="chunks\5859.js.map" />
+    <Content Include="chunks\5875.js.map" />
+    <Content Include="chunks\6086.js.map" />
+    <Content Include="chunks\6185.js.map" />
+    <Content Include="chunks\6224.js.map" />
+    <Content Include="chunks\6248.js.map" />
+    <Content Include="chunks\6290.js.map" />
+    <Content Include="chunks\6330.js.map" />
+    <Content Include="chunks\6361.js.map" />
+    <Content Include="chunks\6441.js.map" />
+    <Content Include="chunks\6479.js.map" />
+    <Content Include="chunks\656.js.map" />
+    <Content Include="chunks\6646.js.map" />
+    <Content Include="chunks\6685.js.map" />
+    <Content Include="chunks\6774.js.map" />
+    <Content Include="chunks\6782.js.map" />
+    <Content Include="chunks\6802.js.map" />
+    <Content Include="chunks\6829.js.map" />
+    <Content Include="chunks\6846.js.map" />
+    <Content Include="chunks\6857.js.map" />
+    <Content Include="chunks\6871.js.map" />
+    <Content Include="chunks\6888.js.map" />
+    <Content Include="chunks\693.js.map" />
+    <Content Include="chunks\6985.js.map" />
+    <Content Include="chunks\7013.js.map" />
+    <Content Include="chunks\7062.js.map" />
+    <Content Include="chunks\7076.js.map" />
+    <Content Include="chunks\7251.js.map" />
+    <Content Include="chunks\7303.js.map" />
+    <Content Include="chunks\734.js.map" />
+    <Content Include="chunks\7400.js.map" />
+    <Content Include="chunks\7594.js.map" />
+    <Content Include="chunks\7653.js.map" />
+    <Content Include="chunks\7660.js.map" />
+    <Content Include="chunks\7808.js.map" />
+    <Content Include="chunks\786.js.map" />
+    <Content Include="chunks\791.js.map" />
+    <Content Include="chunks\7946.js.map" />
+    <Content Include="chunks\7978.js.map" />
+    <Content Include="chunks\7981.js.map" />
+    <Content Include="chunks\8060.js.map" />
+    <Content Include="chunks\81.js.map" />
+    <Content Include="chunks\8163.js.map" />
+    <Content Include="chunks\8185.js.map" />
+    <Content Include="chunks\8229.js.map" />
+    <Content Include="chunks\8243.js.map" />
+    <Content Include="chunks\8299.js.map" />
+    <Content Include="chunks\8385.js.map" />
+    <Content Include="chunks\8414.js.map" />
+    <Content Include="chunks\8506.js.map" />
+    <Content Include="chunks\8536.js.map" />
+    <Content Include="chunks\8611.js.map" />
+    <Content Include="chunks\8699.js.map" />
+    <Content Include="chunks\8718.js.map" />
+    <Content Include="chunks\8748.js.map" />
+    <Content Include="chunks\8754.js.map" />
+    <Content Include="chunks\890.js.map" />
+    <Content Include="chunks\8923.js.map" />
+    <Content Include="chunks\9110.js.map" />
+    <Content Include="chunks\9112.js.map" />
+    <Content Include="chunks\922.js.map" />
+    <Content Include="chunks\9306.js.map" />
+    <Content Include="chunks\9323.js.map" />
+    <Content Include="chunks\9341.js.map" />
+    <Content Include="chunks\9421.js.map" />
+    <Content Include="chunks\9431.js.map" />
+    <Content Include="chunks\9435.js.map" />
+    <Content Include="chunks\9457.js.map" />
+    <Content Include="chunks\9547.js.map" />
+    <Content Include="chunks\9571.js.map" />
+    <Content Include="chunks\9597.js.map" />
+    <Content Include="chunks\9794.js.map" />
+    <Content Include="chunks\9821.js.map" />
+    <Content Include="chunks\9849.js.map" />
+    <Content Include="chunks\9859.js.map" />
+    <Content Include="chunks\9871.js.map" />
+    <Content Include="chunks\990.js.map" />
+    <Content Include="chunks\9918.js.map" />
+    <Content Include="chunks\994.js.map" />
+    <Content Include="chunks\9955.js.map" />
+    <Content Include="chunks\9979.js.map" />
+    <Content Include="config\RegionData.json" />
+    <Content Include="config\settings.json" />
+    <Content Include="config\settingsQC.json" />
+    <None Include="packages.config" />
+    <Content Include="proxy\proxy.ashx" />
+    <Content Include="proxy\proxy.config" />
+    <None Include="proxy\proxy.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="proxy\README.md" />
+    <Content Include="proxy\Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64713</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/GlocatorN</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

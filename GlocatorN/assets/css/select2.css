@@ -1,0 +1,43 @@
+/* select 2 css */
+
+/* for move dropdown arrow to left */
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    left: 1px;
+  }
+  
+  /* this if you want to apply the width from css on select dom */
+  /* .select2 {
+    width:100%!important;
+  } */
+  
+  /* to remove outline from the input inside the select dom */
+    input.select2-search__field {
+      outline: none;
+  }
+  
+  .select2-container--default .select2-selection--single {
+    height: 37px;
+    direction: rtl;
+    font-size: 13px;
+    font-family: 'Kufi';
+    border: 1px solid lightgray;
+    border-radius: 0;
+  }
+  
+  
+  .select2-results {
+    direction: rtl;
+    font-size: 13px;
+    font-family: 'Kufi';
+  }
+  
+  .select2-search--dropdown {
+    direction: rtl;
+  }
+  
+  .select2-selection { overflow: hidden; }
+  .select2-selection__rendered { white-space: normal; word-break: break-all; }
+ 
+  .select2-container--default .select2-search--dropdown .select2-search__field {
+    border: 1px solid lightgray;
+}

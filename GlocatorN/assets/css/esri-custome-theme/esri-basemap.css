@@ -1,0 +1,13 @@
+.esri-basemap-toggle__container,
+.esri-basemap-toggle__image {
+    border-radius: 15px;
+    border: 1px solid #9c8c8c;
+}
+
+.esri-component.esri-basemap-toggle.esri-widget:focus {
+    outline: none !important;
+}
+
+.esri-basemap-thumbnail.esri-basemap-toggle__container.esri-basemap-toggle__image--secondary:focus {
+    outline: none !important;
+}
