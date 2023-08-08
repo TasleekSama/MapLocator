@@ -141,6 +141,9 @@ async function loadmap() {
             urlUtils.addProxyRule({
                 proxyUrl: services.proxyUrl.url,
                 urlPrefix: "https://gis65.momra.gov.sa"
+            }); urlUtils.addProxyRule({
+                proxyUrl: services.proxyUrl.url,
+                urlPrefix: "https://gisstg227.momra.gov.sa"
             });
             $('#Region1').change(async function () {
                 RegionCode = ($(this).val())
