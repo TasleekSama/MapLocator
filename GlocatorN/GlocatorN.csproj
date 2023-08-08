@@ -540,6 +540,7 @@
     <None Include="packages.config" />
     <Content Include="proxy\proxy.ashx" />
     <Content Include="proxy\proxy.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="proxy\proxy.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -4,6 +4,7 @@ let DistrictOBJECTID;
 let amanaMAZARAMANACODE;
 let MuncMAZARAMANACODE;
 let template1;
+var printCount = 0;
 async function init(event)
 {
     try { require([
@@ -129,7 +130,7 @@ async function init(event)
             $('#City').find('option').remove().end().append('<option value="' + CiteisInSelectedRegion[CitiesIndex].attributes.CITEYCODE + '">' + CiteisInSelectedRegion[CitiesIndex].attributes.CITEYARNAME + '</option>');
             $('#districts').find('option').remove().end().append('<option value="' + DistrictOBJECTID + '">' + dataObj.District + '</option>');
 
-            dataObj.RegionName = AllRegion[RegionIndex].attributes.REGIONARNAME
+           // dataObj.RegionName = AllRegion[RegionIndex].attributes.REGIONARNAME
             dataObj.CITEYNAME = CiteisInSelectedRegion[CitiesIndex].attributes.CITEYARNAME;
             dataObj.Location =
                 {
@@ -141,7 +142,7 @@ async function init(event)
             dataObj.GIS = "TRUE";
             dataObj.y = point.latitude;
             dataObj.x = point.longitude;
-            GetNearestStreetsByIntersect(point);
+            GetRegionByGeomerty(point)
 
         })
 
@@ -595,16 +596,29 @@ let getScreenShot = () => {
         data: JSON.stringify(dati),
         success: function (result)
         {
-            scrnShotURL = result;
-            dataObj.imgURL = scrnShotURL
-            var functionName = "GetScreenShoot";
            // AddLog("تم حفظ الصورة", functionName, "49", "1", "Info", JSON.stringify(dati));
+            if (!result.includes("https://gisappstg.momra.gov.sa/proxy/proxy.ashx") && printCount < 4) {
+                getScreenShot();
+                //getEsriScreenShot();
+                printCount++;
+            }
+            else
+            {
+                scrnShotURL = result;
+                dataObj.imgURL = scrnShotURL
+                var functionName = "GetScreenShoot";
+                SendBaladyObject();
 
-            SendBaladyObject();
+            }
+
         },
         error: function (result) {
             var functionName = "GetScreenShoot";
             AddLog("خطأ عند طباعة الصورة", functionName, "49", "1", "Error", JSON.stringify(dati));
+            if (printCount<3) {
+                getScreenShot();
+                printCount++;
+            }
 
 
         }
@@ -617,10 +631,6 @@ let getScreenShot = () => {
 
 let getEsriScreenShot = () => {
     require(["esri/rest/support/PrintTemplate", "esri/rest/support/PrintParameters", "esri/rest/print"], (PrintTemplate, PrintParameters, print) => {
-      
-        buttonElem.classList.add('spinning');
-        $('#accept').prop('disabled', true);
-        $("#accept").css("background", "#136a6a");
         var template = new PrintTemplate();
         template.exportOptions = {
             width: 500,
@@ -719,4 +729,25 @@ let clipstreet = (streetGeo)=>
     
 
 
+}
+
+async function GetRegionByGeomerty(point) {
+    require([
+        "esri/rest/query", "esri/rest/support/Query", "esri/geometry/Point"
+    ], function (query, Query, Point) {
+        let queryUrl = services.regionLayerUrl.url;
+        let queryObject = new Query();
+        queryObject.returnGeometry = false;
+        queryObject.outFields = ["*"];
+        queryObject.geometry = point;
+        query.executeQueryJSON(queryUrl, queryObject).then(function (data) {
+
+            if (data != null && data.features.length != 0)
+            {
+                dataObj.RegionName = data.features[0].attributes.REGIONARNAME
+
+                GetNearestStreetsByIntersect(point);
+            }
+        })
+    })
 }

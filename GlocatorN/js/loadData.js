@@ -190,15 +190,21 @@ async function GetAllCities() {
 // fill cities
 async function GetCitiesByIntersect(feature) {
    // //  momraGisCore.Loading("block");
-    require([
-        "esri/rest/query", "esri/rest/support/Query", "esri/geometry/support/webMercatorUtils"
-    ], function (query, Query, webMercatorUtils) {
+        require([
+            "esri/rest/query", "esri/rest/support/Query", "esri/geometry/geometryEngine"
+        ], function (query, Query, geometryEngine) {
+            let ptBuff
+            if (feature.geometry.rings.length < 2) {
+                ptBuff = geometryEngine.geodesicBuffer(feature.geometry, -5, "meters");
+            } else 
+                ptBuff=feature.geometry
+           
         let queryUrl = services.CityLayerUrl.url;
         let queryObject = new Query();
         queryObject.returnGeometry = false;
         queryObject.outFields = ["*"];
         queryObject.where = "1=1";
-        queryObject.geometry = feature.geometry;
+            queryObject.geometry = ptBuff;
         query.executeQueryJSON(queryUrl, queryObject).then(function (data) { 
    
 
@@ -348,9 +354,16 @@ async function GetstreetsByIntersect(feature) {
 
 async function GetNearestStreetsByIntersect(point) {
     require([
-        "esri/rest/query", "esri/rest/support/Query", "esri/geometry/Point"
-    ], function (query, Query, Point) {
+        "esri/rest/query", "esri/rest/support/Query", "esri/geometry/Point", "esri/geometry/geometryEngine", "esri/geometry/Polyline",
+    ], function (query, Query, Point, geometryEngine, Polyline) {
        
+        var obj1 = [];
+        // create point 
+        var point1 = new Point({
+            x: point.longitude,
+            y: point.latitude,
+            spatialReference: { wkid: 4326 }
+        });
         let queryUrl = services.streetLayerUrl.url;
         let queryObject = new Query();
         queryObject.returnGeometry = true;
@@ -360,12 +373,24 @@ async function GetNearestStreetsByIntersect(point) {
         queryObject.units = "esriSRUnit_Meter";
         queryObject.geometry = point;
         query.executeQueryJSON(queryUrl, queryObject).then(function (Streetdata) {
-           
-        if (Streetdata.features.length != 0 && Streetdata.features[0].attributes.STREETNAME != null) {
-        dataObj.Street = Streetdata.features[0].attributes.STREETNAME + ""
-        dataObj.StreetCode = Streetdata.features[0].attributes.STREETCODE + ""
+            for (var i = 0; i < Streetdata.features.length; i++)
+            {
+                // create polyline 
+                var line = new Polyline({
+                    paths: Streetdata.features[i].geometry.paths,
+                    spatialReference: { wkid: 4326 }
+                });
+                var distance = geometryEngine.distance(point1, line);
+                obj1.push(distance);
 
-        $('#streets').find('option').remove().end().append('<option value="' + Streetdata.features[0].attributes.STREETCODE + '">' + Streetdata.features[0].attributes.STREETNAME+"" + '</option>');
+                console.log(i, distance)
+            }
+            var nearestIndex = obj1.indexOf(Math.min.apply(null, obj1))
+            if (Streetdata.features.length != 0 && Streetdata.features[nearestIndex].attributes.STREETNAME != null)
+            {
+                dataObj.Street = Streetdata.features[nearestIndex].attributes.STREETNAME + ""
+                dataObj.StreetCode = Streetdata.features[nearestIndex].attributes.STREETCODE + ""
+            $('#streets').find('option').remove().end().append('<option value="' + dataObj.StreetCode + '">' + dataObj.Street+"" + '</option>');
           }
           else {
         dataObj.Street = "-1"
@@ -436,6 +461,7 @@ async function GetSelesctedRegion(REGIONCODE) {
     require([
         "esri/rest/query", "esri/rest/support/Query", "esri/geometry/Point"
     ], function (query, Query, Point) {
+
 
         let queryUrl = services.regionLayerUrl.url;
         let queryObject = new Query();

@@ -270,6 +270,7 @@ async function loadmap() {
 
         mapView.on("click", async function (event) {
             dataObj = {};
+            printCount = 0;
                 buttonElem = document.querySelector('.button');
                 buttonElem.classList.add('spinning');
 
